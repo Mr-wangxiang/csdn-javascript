@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="info">
+        <ul></ul>
+    </div>
+    <script type="text/javascript">
+    window.onload = function(){
+        function info() {
+            var strArr = [];
+            var data = [{
+                "name": "Anny",
+                "age": "21",
+                "tel": "333333"
+            }, {
+                "name": "Bob",
+                "age": "33",
+                "tel": "232223"
+            }, {
+                "name": "Tom",
+                "age": "25",
+                "tel": "53344"
+            }]
+            for (var i = 0; i < data.length; i++) {
+                strArr[i] = (function(obj) {
+                    return "姓名：" + obj.name + "  年龄：" + obj.age + "  电话：" + obj.tel;
+                })(data[i]);
+            }
+            return strArr;
+        }
+        var strArr = info();
+        $("#info ul").html("<li>" + strArr[0] + "</li><li>" + strArr[1] + "</li><li>" + strArr[2] + "</li>");
+    };
+    </script>
+    <script type="text/javascript" src="./node_modules/jquery/dist/jquery.js">
+    </script>
+</body>
+
+</html>

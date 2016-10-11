@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+        console.log(document);
+            var t = new Date();
+            t.setTime(t.getTime() + 3*24*60*60*1000);
+            console.log(t.toGMTString());
+            document.cookie = "name=mar;expires="
+             + t.toGMTString()+";path=/;domain=localhost";
+            console.log(document.cookie);
+        </script>
+    </body>
+</html>
